@@ -1,0 +1,32 @@
+header {
+  background-color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.header-left h1 {
+  padding: 10px;
+  margin: 5px 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: darkgoldenrod;
+  padding: 10px;
+  margin: 5px 10px;
+  color: white;
+}
