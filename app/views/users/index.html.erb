@@ -1,0 +1,10 @@
+<%= render 'shared/header' %>
+<div class="registration-main">
+  <h1>ユーザー一覧</h1>
+  <% @users.each do |user| %>
+    <div class="field">
+      <%= link_to "#{user.nickname}", user_path(user.id) %>
+    </div>
+  <% end %>
+</div>
+<%= render 'shared/footer' %>

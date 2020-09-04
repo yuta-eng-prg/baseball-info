@@ -1,0 +1,17 @@
+.registration-main {
+  background-color: lightblue;
+  padding: 10px;
+  text-align: center;
+}
+
+.form-content {
+  background-color: lightgray;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.field {
+  background-color: lightblue;
+  padding: 10px;
+  margin: 10px;
+}

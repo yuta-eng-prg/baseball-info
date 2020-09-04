@@ -1,0 +1,32 @@
+.message-contents {
+  background-color: lightblue;
+  padding: 10px;
+}
+
+.message-lists {
+  padding: 10px;
+  border: 1px solid black;
+  background-color: lightpink;
+}
+
+.list-top {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.list-content {
+  background-color: lightgray;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.list-buttom {
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-top: 10px;
+}
+
