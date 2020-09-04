@@ -1,8 +1,10 @@
 <%= render 'shared/header' %>
 
 <div class="registration-main">
-  <h1>ユーザー情報</h1>
+  <h1><%= @user.nickname %>のユーザーページ</h1>
   <div class="form-content">
+
+  <% if user_signed_in? && @user.id == current_user.id %>
     <div class="field">
       <p>ニックネーム</p><br />
       <%= @user.nickname %>
@@ -11,6 +13,8 @@
       <p>メールアドレス</p><br />
       <%= @user.email %>
     </div>
+  <% end %>
+
   </div>
 </div>
 
