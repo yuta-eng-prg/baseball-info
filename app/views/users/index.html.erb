@@ -3,7 +3,7 @@
   <h1>ユーザー一覧</h1>
   <% @users.each do |user| %>
     <div class="field">
-      <%= link_to "#{user.nickname}", "#" %>
+      <%= link_to "#{user.nickname}", user_path(user.id) %>
     </div>
   <% end %>
 </div>

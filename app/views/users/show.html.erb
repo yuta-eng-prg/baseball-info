@@ -1,0 +1,17 @@
+<%= render 'shared/header' %>
+
+<div class="registration-main">
+  <h1>ユーザー情報</h1>
+  <div class="form-content">
+    <div class="field">
+      <p>ニックネーム</p><br />
+      <%= @user.nickname %>
+    </div>
+    <div class="field">
+      <p>メールアドレス</p><br />
+      <%= @user.email %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
