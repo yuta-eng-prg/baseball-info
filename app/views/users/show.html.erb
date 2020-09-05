@@ -1,8 +1,10 @@
 <%= render 'shared/header' %>
 
 <div class="registration-main">
-  <h1>ユーザー情報</h1>
+  <h1><%= @user.nickname %>のユーザーページ</h1>
   <div class="form-content">
+
+  <% if user_signed_in? && @user.id == current_user.id %>
     <div class="field">
       <p>ニックネーム</p><br />
       <%= @user.nickname %>
@@ -11,6 +13,10 @@
       <p>メールアドレス</p><br />
       <%= @user.email %>
     </div>
+    <%= link_to '編集', edit_user_registration_path, class: "btn" %>
+    <%= link_to '退会する', user_path(@user.id), method: :delete, class: "btn" %>
+  <% end %>
+
   </div>
 </div>
 

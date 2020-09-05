@@ -2,11 +2,11 @@
 
 <div class="registration-main">
 
-  <h1>新規登録</h1>
+  <h1><%= current_user.nickname %>のユーザー情報の編集</h1>
 
-  <%= form_with model: @user, url: user_registration_path, class: 'form-content', local: true do |f| %>
-  
-    <%= render "devise/shared/error_messages", model: f.object %>
+  <%= form_with model: current_user, class: 'form-content', local: true do |f| %>
+
+    <%# <%= render "devise/shared/error_messages", model: f.object %> 
 
     <div class="field">
       <%= f.label "ニックネーム" %><br />
@@ -26,13 +26,8 @@
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
 
-    <div class="field">
-      <%= f.label "パスワード（確認用）" %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
     <div class="actions">
-      <%= f.submit "新規登録", class: "btn" %>
+      <%= f.submit "編集内容を更新する", class: "btn" %>
     </div>
 
   <% end %>
