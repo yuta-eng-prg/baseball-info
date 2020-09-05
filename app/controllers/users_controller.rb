@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
   
   def index
     @users = User.all
@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    redirect_to root_path if current_user.id != @user.id
+    redirect_to root_path if @user.destroy
   end
 
   # def edit

@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
   }
   root 'messages#index'
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 end
