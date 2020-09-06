@@ -1,9 +1,24 @@
 <%= render 'shared/header' %>
 
 <div class="about">
-  <h1>baseball-infoとは</h1>
-  <h1>野球について見識を広める</h1>
-  <h1>投稿してみよう</h1>
+  <div class="box1">
+    <h1 class="box-title">baseball-infoとは</h1>
+    <p class="box-content">baseball-infoは、野球についてもっと知りたい、語りたいという思いを実現するために作られたサービスです。</p>
+  </div>
+  <div class="box2">
+    <h1 class="box-title">野球について見識を深める</h1>
+    <p class="box-content">baseball-infoは、野球についての様様な意見、主張、質問などが投稿されています。それらを知ることで野球についてより一層見識を深めることができます。あなたも早速いろんな投稿を見てみましょう！</p>
+    <div class="box-btn">
+      <%= link_to '投稿を見てみる！', messages_path, class: "btn-about" %>
+    </div>
+  </div>
+  <div class="box3">
+    <h1 class="box-title">投稿してみよう</h1>
+    <p class="box-content">baseball-infoでは、会員登録することで、野球についてのことを投稿することができます。普段考えていることや主張したいこと、困っていてアドバイスが欲しいことなど、様々なことを投稿することができます。投稿された物に対してコメントをもらうことで、悩みが解決したり、野球についての見識を深めることができます。また、自身が行った今日の練習内容をアウトプットするために投稿することもできます。その投稿が他の誰かにとって有益な情報になるかもしれないからです。さあ、まずは会員登録してみよう！</p>
+    <div class="box-btn">
+      <%= link_to '会員登録してみよう！', new_user_registration_path, class: "btn-about" %>
+    </div>
+  </div>
 </div>
 
 <%= render 'shared/footer' %>

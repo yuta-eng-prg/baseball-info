@@ -7,7 +7,9 @@
      <div class="list-top">
       <div class="list-tag">
         <div>ユーザー名：</div>
-        <div><%= message.user.nickname %></div>
+        <%= link_to user_path(message.user.id) do %>
+         <div><%= message.user.nickname %></div>
+        <% end %>
       </div>
       <div class="list-tag">
         <div>日時：</div>

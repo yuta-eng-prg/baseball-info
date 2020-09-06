@@ -1,5 +1,44 @@
 .about {
+  background-color: blue;
+}
+
+.box1 {
+  padding: 20px;
+  background-color: lightskyblue;
+  color: white;
+}
+
+.box2 {
+  padding: 20px;
   background-color: lightblue;
   color: white;
+}
+
+.box3 {
+  padding: 20px;
+  background-color: lightskyblue;
+  color: white;
+}
+
+.box-title {
   font-size: 50px;
+  padding-bottom: 10px;
+}
+
+.box-content {
+  font-size: 30px;
+  color: white;
+}
+
+.box-btn {
+  text-align: center;
+  padding: 10px;
+}
+
+.btn-about {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+  background-color: lightgreen;
+  padding: 10px;
 }
