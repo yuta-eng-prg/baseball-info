@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def about
     
@@ -24,6 +24,21 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find(params[:id])
+  end
+
+  def edit
+    @message = Message.find(params[:id])
+    redirect_to root_path if current_user.id != @message.user_id
+  end
+  
+  def update
+    @message = Message.find(params[:id])
+    redirect_to root_path if current_user.id != @message.user_id
+    if @message.update(message_params)
+      redirect_to message_path(@message.id)
+    else
+      render :edit
+    end
   end
 
   private
