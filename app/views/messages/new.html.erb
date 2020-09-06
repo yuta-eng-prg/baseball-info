@@ -10,16 +10,31 @@
   </div>
   <div class="form-main">
     <%= form_with model: @message, local: true do |f| %>
+
+    <%= render "shared/error_messages", model: f.object %>
+
     <div class="container">
       <%= f.label "メッセージ" %><br />
       <%= f.text_area :content, class:"content", placeholder:"野球に関しての自身の意見、主張などを自由に記入してください。また、アドバイスが欲しいこと、他の人の意見をもらいたいことなどの質問を記入してもらって構いません。最近自分が取り組んでいることを記入してアウトプットの場として使っていただいて構いません。自由に記述してください。" %>
     </div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
-    <div class=""></div>
     <div class="container">
-      <%= f.submit "作成する" ,class:"btn" %>
+      <%= f.label "世代" %><br />
+      <%= f.collection_select(:generation_id, Generation.all, :id, :name, {}, {class:"tag"}) %>
+    </div>
+    <div class="container">
+      <%= f.label "ジャンル" %><br />
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"tag"}) %>
+    </div>
+    <div class="container">
+      <%= f.label "体の部位" %><br />
+      <%= f.collection_select(:body_parts_id, BodyParts.all, :id, :name, {}, {class:"tag"}) %>
+    </div>
+    <div class="container">
+      <%= f.label "メッセージカテゴリー" %><br />
+      <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"tag"}) %>
+    </div>
+    <div class="container">
+      <%= f.submit "上記の内容でメッセージを作成する" ,class:"btn" %>
     </div>
     <% end %>
   </div>
@@ -32,7 +47,7 @@
 
 
 
-<%# f.collection_select(:generation_id, Generation.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+
 
 
   

@@ -2,37 +2,39 @@
 
 <div class="message-contents">
   <ul class="message-lists">
+    <% @messages.each do |message| %>
     <li class="list">
      <div class="list-top">
-      <div class="user-name">
+      <div class="list-tag">
         <div>ユーザー名：</div>
-        <div>健太</div>
+        <div><%= message.user.nickname %></div>
       </div>
-      <div class="date">
+      <div class="list-tag">
         <div>日時：</div>
-        <div>2010.10.10</div>
+        <div><%= message.created_at %></div>
       </div>
      </div>
-     <div class="list-content">自分は小学４年でピッチャーをやっています。もっと速い球が投げれるようになりたいのですが、どのように腕を振ったら良いですか？教えてください。お願いします。</div>
+     <div class="list-content">自分は小学４年でピッチャーをやっています。もっと速い球が投げれるようになりたいのですが、どのように腕を振ったら良いですか？教えてください。お願いします。<%= message.content %></div>
      <div class="list-buttom">
-      <div class="">
+      <div class="list-tag">
         <div>世代：</div>
-        <div>小学生</div>
+        <div><%= message.generation.name %></div>
       </div>
-      <div class="">
+      <div class="list-tag">
         <div>ジャンル：</div>
-        <div>投球</div>
+        <div><%= message.genre.name %></div>
       </div>
-      <div class="">
+      <div class="list-tag">
         <div>体の部位：</div>
-        <div>腕</div>
+        <div><%= message.body_parts.name %></div>
       </div>
-      <div class="">
+      <div class="list-tag">
         <div>メッセージカテゴリー：</div>
-        <div>アドバイスが欲しい</div>
+        <div><%= message.category.name %></div>
       </div>
      </div>
     </li>
+    <% end %>
   </ul>
 </div>
 
