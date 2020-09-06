@@ -29,6 +29,11 @@
   margin-top: 10px;
 }
 
+.content-show {
+  text-decoration: none;
+  color: blue;
+}
+
 .list-buttom {
   background-color: lightgray;
   display: flex;

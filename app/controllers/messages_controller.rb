@@ -1,17 +1,18 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+
   def about
     
   end
+
   def index
     @messages = Message.all.order('created_at DESC')
   end
+
   def new
     @message = Message.new
   end
-  def create
-    
-  end
+  
   def create
     @message = Message.create(message_params)
     if @message.save
@@ -19,6 +20,10 @@ class MessagesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @message = Message.find(params[:id])
   end
 
   private

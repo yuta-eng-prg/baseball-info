@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   }
   root 'messages#about'
   resources :users, only: [:index, :show, :edit, :update, :destroy]
-  resources :messages, only: [:index, :new, :create]
+  resources :messages, only: [:index, :new, :create, :show]
   
 end
