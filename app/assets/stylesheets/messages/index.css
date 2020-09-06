@@ -9,6 +9,13 @@
   background-color: lightpink;
 }
 
+.list {
+  background-color: lightblue;
+  padding: 20px;
+  border: 3px solid white;
+  margin: 10px;
+}
+
 .list-top {
   background-color: lightgray;
   display: flex;
@@ -28,5 +35,9 @@
   justify-content: space-between;
   padding: 5px;
   margin-top: 10px;
+}
+
+.list-tag {
+  display: flex;
 }
 
