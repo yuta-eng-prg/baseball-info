@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="list-content">
-        <%= link_to message_path(@message.id) do %>
+        <%= link_to message_path(@message.id), class: "content-show" do %>
           <%= @message.content %>
         <% end %>
       </div>
