@@ -1,3 +1,12 @@
+/* メッセージのタイトル */
+.message-title{
+  background-color: lightblue;
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+}
+
 /* メッセージの表示CSS */
 .message-contents {
   background-color: lightblue;

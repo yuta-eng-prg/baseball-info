@@ -1,5 +1,7 @@
 <%= render 'shared/header' %>
 
+<div class="message-title">メッセージ詳細</div>
+
 <div class="message-contents">
   <div class="message-box">
     <div class="message-top">
@@ -27,8 +29,8 @@
 
 <div class="edit-destroy">
   <% if user_signed_in? && @message.user_id == current_user.id %>
-    <%= link_to 'この投稿を編集', edit_message_path(@message.id), class: "btn" %>
-    <%= link_to 'この投稿を削除する', message_path(@message.id), method: :delete, class: "btn" %>
+    <%= link_to 'このメッセージを編集', edit_message_path(@message.id), class: "btn" %>
+    <%= link_to 'このメッセージを削除する', message_path(@message.id), method: :delete, class: "btn" %>
   <% end %>
 </div>
 
