@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="list-content">
-        <%= link_to message_path(@message.id), class: "content-show" do %>
+        <%= link_to message_comments_path(@message.id), class: "content-show" do %>
           <%= @message.content %>
         <% end %>
       </div>
@@ -48,5 +48,13 @@
     <%= link_to 'この投稿を削除する', message_path, method: :delete, class: "btn" %>
   <% end %>
 </div>
+
+
+<div>この投稿に対するコメント</div>
+<%= form_with model: [@message, @comment], local: true do |f| %>
+
+  <%= f.text_area :comment, class:"comment", placeholder:"投稿に対するコメントを記入してください" %>
+
+<% end %>
 
 <%= render 'shared/footer' %>
