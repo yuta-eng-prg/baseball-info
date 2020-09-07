@@ -58,11 +58,11 @@ Things you may want to cover:
 
 ## comments テーブル
 
-| Column  | Type       | Options                                     |
-| ------- | ---------- | ------------------------------------------- |
-| comment | text       | null: false                                 |
-| user    | references | null: false, index: true, foreign_key: true |
-| message | references | null: false, foreign_key: true              |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| comment | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| message | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -72,10 +72,10 @@ Things you may want to cover:
 
 ## helpful_messages テーブル
 
-| Column  | Type       | Options                                     |
-| ------- | ---------- | ------------------------------------------- |
-| user    | references | null: false, index: true, foreign_key: true |
-| message | references | null: false, foreign_key: true              |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| message | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -84,10 +84,10 @@ Things you may want to cover:
 
 ## helpful_comments テーブル
 
-| Column  | Type       | Options                                     |
-| ------- | ---------- | ------------------------------------------- |
-| user    | references | null: false, index: true, foreign_key: true |
-| comment | references | null: false, foreign_key: true              |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| comment | references | null: false, foreign_key: true |
 
 ### Association
 
