@@ -29,6 +29,11 @@
   margin-top: 10px;
 }
 
+.content-show {
+  text-decoration: none;
+  color: blue;
+}
+
 .list-buttom {
   background-color: lightgray;
   display: flex;
@@ -41,3 +46,8 @@
   display: flex;
 }
 
+.edit-destroy {
+  display: flex;
+  justify-content: space-around;
+  background-color: lightgray;
+}

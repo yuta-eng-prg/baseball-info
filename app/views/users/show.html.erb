@@ -3,21 +3,63 @@
 <div class="registration-main">
   <h1><%= @user.nickname %>のユーザーページ</h1>
   <div class="form-content">
-
-  <% if user_signed_in? && @user.id == current_user.id %>
-    <div class="field">
-      <p>ニックネーム</p><br />
-      <%= @user.nickname %>
-    </div>
-    <div class="field">
-      <p>メールアドレス</p><br />
-      <%= @user.email %>
-    </div>
-    <%= link_to '編集', edit_user_registration_path, class: "btn" %>
-    <%= link_to '退会する', user_path(@user.id), method: :delete, class: "btn" %>
-  <% end %>
-
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <div class="field">
+        <p>ニックネーム</p><br />
+        <%= @user.nickname %>
+      </div>
+      <div class="field">
+        <p>メールアドレス</p><br />
+        <%= @user.email %>
+      </div>
+      <%= link_to '編集', edit_user_registration_path, class: "btn" %>
+      <%= link_to '退会する', user_path(@user.id), method: :delete, class: "btn" %>
+    <% end %>
   </div>
+</div>
+
+<div class="message-contents">
+  <ul class="message-lists">
+    <% @messages.each do |message| %>
+    <li class="list">
+      <div class="list-top">
+        <div class="list-tag">
+          <div>ユーザー名：</div>
+          <%= link_to user_path(message.user.id) do %>
+            <div><%= message.user.nickname %></div>
+          <% end %>
+        </div>
+        <div class="list-tag">
+          <div>日時：</div>
+          <div><%= message.created_at %></div>
+        </div>
+      </div>
+      <div class="list-content">
+        <%= link_to message_path(message.id), class: "content-show" do %>
+          <%= message.content %>
+        <% end %>
+      </div>
+      <div class="list-buttom">
+        <div class="list-tag">
+          <div>世代：</div>
+          <div><%= message.generation.name %></div>
+        </div>
+        <div class="list-tag">
+          <div>ジャンル：</div>
+          <div><%= message.genre.name %></div>
+        </div>
+        <div class="list-tag">
+          <div>体の部位：</div>
+          <div><%= message.body_parts.name %></div>
+        </div>
+        <div class="list-tag">
+          <div>メッセージカテゴリー：</div>
+          <div><%= message.category.name %></div>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 </div>
 
 <%= render 'shared/footer' %>
