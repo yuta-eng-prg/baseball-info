@@ -42,9 +42,11 @@
   </ul>
 </div>
 
-<% if user_signed_in? && @message.user_id == current_user.id %>
-  <%= link_to 'この投稿を編集', edit_message_path(@message.id), class: "btn" %>
-  <%= link_to 'この投稿を削除する', "#", method: :delete, class: "btn" %>
-<% end %>
+<div class="edit-destroy">
+  <% if user_signed_in? && @message.user_id == current_user.id %>
+    <%= link_to 'この投稿を編集', edit_message_path(@message.id), class: "btn" %>
+    <%= link_to 'この投稿を削除する', message_path, method: :delete, class: "btn" %>
+  <% end %>
+</div>
 
 <%= render 'shared/footer' %>
