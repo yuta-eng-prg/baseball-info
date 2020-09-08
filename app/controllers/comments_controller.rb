@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :edit, :update]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   def index
     @comment = Comment.new
@@ -32,6 +32,12 @@ class CommentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    redirect_to root_path if current_user.id != @comment.user_id
+    redirect_to message_comments_path(@comment.message_id) if @comment.destroy
   end
 
   private

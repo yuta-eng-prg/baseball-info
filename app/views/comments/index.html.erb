@@ -56,7 +56,7 @@
     <% if user_signed_in? && comment.user_id == current_user.id %>
       <div class="comment-edit-destroy">
         <%= link_to 'このコメントを編集', edit_message_comment_path(@message.id, comment.id), class: "comment-edit-btn" %>
-        <%= link_to 'このコメントを削除する', "#", method: :delete, class: "comment-edit-btn" %>
+        <%= link_to 'このコメントを削除する', message_comment_path(@message.id, comment.id), method: :delete, class: "comment-edit-btn" %>
       </div>
     <% end %>
 
