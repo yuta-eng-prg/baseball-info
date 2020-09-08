@@ -1,53 +1,121 @@
-.message-contents {
-  background-color: lightblue;
-  padding: 10px;
-}
-
-.message-lists {
-  padding: 10px;
-  border: 1px solid black;
-  background-color: lightpink;
-}
-
-.list {
+/* メッセージのタイトル */
+.message-title{
   background-color: lightblue;
   padding: 20px;
-  border: 3px solid white;
-  margin: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  border-bottom: 4px solid white;
 }
 
-.list-top {
-  background-color: lightgray;
+/* メッセージの表示CSS */
+.message-contents {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.message-box {
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.message-top {
+  padding-bottom: 10px;
+  border-bottom: 4px dotted lightblue;
+}
+
+.message-middle {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
+  padding: 10px 0;
+  border-bottom: 4px dotted lightblue;
 }
 
-.list-content {
-  background-color: lightgray;
-  padding: 5px;
-  margin-top: 10px;
-}
-
-.content-show {
+.message-show {
   text-decoration: none;
   color: blue;
 }
 
-.list-buttom {
-  background-color: lightgray;
+.message-buttom {
   display: flex;
   justify-content: space-between;
-  padding: 5px;
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
-.list-tag {
-  display: flex;
-}
-
-.edit-destroy {
+/* メッセージの編集削除リンクのCSS */
+.message-edit-destroy {
   display: flex;
   justify-content: space-around;
-  background-color: lightgray;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.message-btn {
+  background-color: white;
+  color: lightblue;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 10px;
+}
+
+/* コメントのタイトル */
+.comment-title{
+  background-color: lightgreen;
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+
+/* コメントの表示CSS */
+.comment-contents {
+  background-color: lightgreen;
+  padding: 20px 80px 20px 80px;
+}
+
+.comment-box {
+  background-color: white;
+  border: 4px solid white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.comment-top {
+  padding-bottom: 20px;
+  border-bottom: 2px dotted lightgreen;
+}
+
+.comment-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+/* コメントの入力フォームCSS */
+.comment-form {
+  background-color: lightgreen;
+  padding: 20px 80px 20px 80px;
+  text-align: center;
+}
+
+.comment-form-title {
+  color: white;
+  padding: 10px;
+}
+
+.comment-form-input {
+  width: 90%;
+  border: none;
+}
+
+.comment-btn {
+  background-color: white;
+  color: lightgreen;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 10px;
+  border: none;
 }
