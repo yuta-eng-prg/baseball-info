@@ -27,34 +27,44 @@
   </div>
 </div>
 
-<div class="edit-destroy">
+<div class="message-edit-destroy">
   <% if user_signed_in? && @message.user_id == current_user.id %>
-    <%= link_to 'このメッセージを編集', edit_message_path(@message.id), class: "btn" %>
-    <%= link_to 'このメッセージを削除する', message_path(@message.id), method: :delete, class: "btn" %>
+    <%= link_to 'このメッセージを編集', edit_message_path(@message.id), class: "message-btn" %>
+    <%= link_to 'このメッセージを削除する', message_path(@message.id), method: :delete, class: "message-btn" %>
   <% end %>
 </div>
 
 
-<div>この投稿に対するコメント一覧</div>
+<div class="comment-title">このメッセージに対するコメント一覧</div>
 
 <div class="comment-contents">
+  <% @comments.each do |comment| %>
   <div class="comment-box">
     <div class="comment-top">
-      コメントしましたコメントしましたコメントしましたコメントしましたコメントしましたコメントしましたコメントしましたコメントしましたコメントしましたコメントしました
+      <%= comment.comment %>
     </div>
     <div class="comment-bottom">
-      <div class="comment-user">ユーザー名：野球大輔</div>
-      <div class="comment-date">日時：２０２０１０９０</div>
+      <div class="comment-user">
+        ユーザー名：
+        <%= link_to user_path(comment.user.id) do %>
+          <%= comment.user.nickname %>
+        <% end %>
+      </div>
+      <div class="comment-date">日時：<%= comment.created_at %></div>
     </div>
   </div>
+  <% end %>
 </div>
 
 
 <% if user_signed_in? %>
-  <div>この投稿に対するコメントを作成する</div>
+  <div class="comment-form">
+  <div class="comment-form-title">このメッセージに対するコメントを作成する</div>
   <%= form_with model: [@message, @comment], local: true do |f| %>
-    <%= f.text_area :comment, class:"comment", placeholder:"投稿に対するコメントを記入してください" %>
+    <div><%= f.text_area :comment, class:"comment-form-input", placeholder:"メッセージに対するコメントを記入してください" %></div>
+    <div><%= f.submit "上記の内容でコメントを作成する" ,class:"comment-btn" %></div>
   <% end %>
+  </div>
 <% end %>
 
 <%= render 'shared/footer' %>
