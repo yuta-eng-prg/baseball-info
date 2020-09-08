@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
   def edit
     @message = Message.find(params[:message_id])
     @comment = Comment.find(params[:id])
-    redirect_to root_path if current_user.id != @message.user_id
+    redirect_to root_path if current_user.id != @comment.user_id
   end
 
   def update
