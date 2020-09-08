@@ -119,3 +119,20 @@
   margin: 5px 10px;
   border: none;
 }
+
+/* コメントの編集削除リンクのCSS */
+.comment-edit-destroy {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  padding-top: 20px;
+}
+
+.comment-edit-btn {
+  background-color: lightgreen;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 10px;
+  border: none;
+}
