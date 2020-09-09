@@ -19,6 +19,15 @@
       <div>日時：<%= @message.created_at %></div>
     </div>
     <div class="message-buttom">
+      <div>
+        <% if user_signed_in? %>
+          <% if helpful_message = HelpfulMessage.find_by(user_id: current_user.id, message_id: @message.id) %>
+            <%= link_to "いいねずみ", message_helpful_message_path(@message.id, helpful_message.id), method: :delete %>
+          <% else %>
+            <%= link_to "いいね", message_helpful_messages_path(@message.id), method: :post %>
+          <% end %>
+        <% end %>
+      </div>
       <div>世代：<%= @message.generation.name %></div>        
       <div>ジャンル：<%= @message.genre.name %></div>
       <div>体の部位：<%= @message.body_parts.name %></div>
