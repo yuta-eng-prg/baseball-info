@@ -15,3 +15,58 @@
   padding: 10px;
   margin: 10px;
 }
+
+/* ユーザーのタイトル */
+.user-title{
+  background-color: lightcoral;
+  padding: 20px;
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  border-bottom: 4px solid white;
+}
+
+.user-count {
+  background-color: lightcoral;
+  padding: 20px;
+  color: white;
+}
+
+/* ユーザーの表示CSS */
+.user-contents {
+  background-color: lightcoral;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-box {
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  padding: 10px;
+  border-bottom: 4px dotted lightcoral;
+}
+
+/* ユーザーの編集削除リンクのCSS */
+.user-edit-destroy {
+  display: flex;
+  justify-content: space-around;
+  background-color: lightcoral;
+  padding: 20px;
+}
+
+.user-btn {
+  background-color: white;
+  color: lightcoral;
+  text-decoration: none;
+  padding: 10px;
+  margin: 5px 10px;
+}
