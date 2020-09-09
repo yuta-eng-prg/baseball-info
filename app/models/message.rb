@@ -1,6 +1,7 @@
 class Message < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :helpful_messages, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :generation
   belongs_to_active_hash :genre
