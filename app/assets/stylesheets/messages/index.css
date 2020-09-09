@@ -136,3 +136,18 @@
   margin: 5px 10px;
   border: none;
 }
+
+/* いいね（メッセージ）マークのCSS */
+.good {
+  display: flex;
+}
+
+.ungood-btn {
+  color: lightblue;
+  margin: 5px;
+}
+
+.good-btn {
+  color: lightgray;
+  margin: 5px;
+}

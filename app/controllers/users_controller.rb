@@ -8,6 +8,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @messages = Message.where(user_id: @user.id)
+    @helpful_message_count = 0
+    @messages.each do |message|
+      count = HelpfulMessage.where(message_id: message.id).count
+      @helpful_message_count += count
+    end
   end
 
   def edit
