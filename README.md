@@ -106,7 +106,7 @@ Things you may want to cover:
 
 # DEMO
 
-## ![baseball-info](https://gyazo.com/ace78d04a55e15e1ec5107e66d388458)
+## ![baseball-info](https://i.gyazo.com/ace78d04a55e15e1ec5107e66d388458.gif)
 
 # 工夫したポイント
 
