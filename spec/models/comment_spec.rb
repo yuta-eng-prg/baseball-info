@@ -18,7 +18,7 @@ RSpec.describe Comment, type: :model do
         @comment.comment = ''
         @comment.valid?
         expect(@comment.errors.full_messages).to include("Comment can't be blank")
-      end
+      
       
       
     end
