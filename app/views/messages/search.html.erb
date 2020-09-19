@@ -1,0 +1,57 @@
+<%= render 'shared/header' %>
+
+<div class="message-title">メッセージ一覧</div>
+
+<%= form_with(url: search_messages_path, local: true, method: :get) do |form| %>
+ <%= form.text_field :keyword, placeholder: "検索する" %>
+ <%= form.submit "検索" %>
+<% end %>
+
+<div class="message-contents">
+  <% @messages.each do |message| %>
+  <div class="message-box">
+    <div class="message-top">
+      <%= link_to message_comments_path(message.id), class: "message-show" do %>
+        <%= message.content %>
+      <% end %>
+    </div>
+    <div class="message-middle">
+      <div>
+        ユーザー名：
+        <%= link_to user_path(message.user.id) do %>
+          <%= message.user.nickname %>
+        <% end %>
+      </div>
+      <div>日時：<%= message.created_at %></div>
+    </div>
+    <div class="message-buttom">
+
+      <%# いいねボタンのコード %>
+      <div class="good">
+        <% if user_signed_in? %>
+          <% if helpful_message = HelpfulMessage.find_by(user_id: current_user.id, message_id: message.id) %>
+            <%= link_to message_helpful_message_path(message.id, helpful_message.id), method: :delete do %>
+              <span class="fa far fa-thumbs-up ungood-btn"></span>
+            <% end %>
+          <% else %>
+            <%= link_to message_helpful_messages_path(message.id), method: :post do %>
+              <span class="fa far fa-thumbs-up good-btn"></span>
+            <% end %>
+          <% end %>
+        <% else %>
+          <div class="fa far fa-thumbs-up ungood-btn"></div>
+        <% end %>
+        <div><%= HelpfulMessage.where(message_id: message.id).count %></div>
+      </div>
+
+      <div>世代：<%= message.generation.name %></div>        
+      <div>ジャンル：<%= message.genre.name %></div>
+      <div>体の部位：<%= message.body_parts.name %></div>
+      <div>メッセージカテゴリー：<%= message.category.name %></div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<%= render 'shared/footer' %>
