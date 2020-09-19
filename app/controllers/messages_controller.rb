@@ -47,6 +47,10 @@ class MessagesController < ApplicationController
     redirect_to user_path(current_user.id) if @message.destroy
   end
 
+  def search
+    @messages = Message.search(params[:keyword]) 
+  end
+
   private
 
   def message_params

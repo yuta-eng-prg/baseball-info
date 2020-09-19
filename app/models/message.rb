@@ -16,4 +16,12 @@ class Message < ApplicationRecord
     validates :category_id, numericality: { other_than: 1 }
   end
 
+  def self.search(search)
+    if search != ""
+      Message.where('content LIKE(?)', "%#{search}%")
+    else
+      Message.all
+    end 
+  end
+
 end
