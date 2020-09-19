@@ -2,6 +2,11 @@
 
 <div class="message-title">メッセージ一覧</div>
 
+<%= form_with(url: search_messages_path, local: true, method: :get) do |form| %>
+ <%= form.text_field :keyword, placeholder: "検索する" %>
+ <%= form.submit "検索" %>
+<% end %>
+
 <div class="message-contents">
   <% @messages.each do |message| %>
   <div class="message-box">
