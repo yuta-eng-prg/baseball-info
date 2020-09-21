@@ -5,7 +5,7 @@
   <h1><%= current_user.nickname %>のユーザー情報の編集</h1>
 
   <%= form_with model: current_user, class: 'form-content', local: true do |f| %>
-
+  <%# エラー文を表示できないため断念 %>
     <%# <%= render "devise/shared/error_messages", model: f.object %> 
 
     <div class="field">
