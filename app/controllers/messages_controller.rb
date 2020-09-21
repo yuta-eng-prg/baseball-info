@@ -22,10 +22,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  def show
-    @message = Message.find(params[:id])
-  end
-
   def edit
     @message = Message.find(params[:id])
     redirect_to root_path if current_user.id != @message.user_id
@@ -35,7 +31,7 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     redirect_to root_path if current_user.id != @message.user_id
     if @message.update(message_params)
-      redirect_to message_path(@message.id)
+      redirect_to message_comments_path(@message.id)
     else
       render :edit
     end
