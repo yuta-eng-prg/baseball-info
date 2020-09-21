@@ -43,6 +43,15 @@
   flex-direction: column;
 }
 
+form {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .user-box {
   width: 50%;
   padding: 10px;
@@ -53,6 +62,11 @@
 .user-info {
   padding: 10px;
   border-bottom: 4px dotted lightcoral;
+}
+
+.user-info-input {
+  width: 50%;
+  padding: 5px;
 }
 
 /* ユーザーの編集削除リンクのCSS */
@@ -69,4 +83,5 @@
   text-decoration: none;
   padding: 10px;
   margin: 5px 10px;
+  border: none;
 }
