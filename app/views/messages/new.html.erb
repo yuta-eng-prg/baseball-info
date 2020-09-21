@@ -1,58 +1,46 @@
 <%= render 'shared/header' %>
 
+<div class="message-title">新規メッセージ作成</div>
 
+<div class="message-contents">
 
-
-
-<div class="form">
-  <div class="form-title">
-    新規メッセージ作成
-  </div>
-  <div class="form-main">
-    <%= form_with model: @message, local: true do |f| %>
+  <%= form_with model: @message, local: true do |f| %>
+  
+  <div class="message-box">
 
     <%= render "shared/error_messages", model: f.object %>
 
-    <div class="container">
+    <div class="message-info">
       <%= f.label "メッセージ" %><br />
       <%= f.text_area :content, class:"content", placeholder:"野球に関しての自身の意見、主張などを自由に記入してください。また、アドバイスが欲しいこと、他の人の意見をもらいたいことなどの質問を記入してもらって構いません。最近自分が取り組んでいることを記入してアウトプットの場として使っていただいて構いません。自由に記述してください。" %>
     </div>
-    <div class="container">
+
+    <div class="message-info">
       <%= f.label "世代" %><br />
       <%= f.collection_select(:generation_id, Generation.all, :id, :name, {}, {class:"tag"}) %>
     </div>
-    <div class="container">
+
+    <div class="message-info">
       <%= f.label "ジャンル" %><br />
       <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"tag"}) %>
     </div>
-    <div class="container">
+
+    <div class="message-info">
       <%= f.label "体の部位" %><br />
       <%= f.collection_select(:body_parts_id, BodyParts.all, :id, :name, {}, {class:"tag"}) %>
     </div>
-    <div class="container">
+
+    <div class="message-info">
       <%= f.label "メッセージカテゴリー" %><br />
       <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"tag"}) %>
     </div>
-    <div class="container">
-      <%= f.submit "上記の内容でメッセージを作成する" ,class:"btn" %>
-    </div>
-    <% end %>
+
   </div>
+
+    <%= f.submit "上記の内容でメッセージを作成する" ,class:"message-btn" %>
+
+  <% end %>
+
 </div>
-
-
-
-
-<h1>メッセージ</h1>
-
-
-
-
-
-
-  
-
-
-
 
 <%= render 'shared/footer' %>
