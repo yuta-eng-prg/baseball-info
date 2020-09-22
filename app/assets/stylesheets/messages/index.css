@@ -144,8 +144,13 @@
   padding: 10px;
 }
 
+.comment-form-comment {
+  width: 100%;
+}
+
 .comment-form-input {
   width: 90%;
+  padding: 5px;
   border: none;
 }
 
