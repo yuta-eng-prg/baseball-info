@@ -89,8 +89,12 @@
     <div class="comment-form-title">このメッセージに対するコメントを作成する</div>
     <%= form_with model: [@message, @comment], local: true do |f| %>
       <%= render "shared/error_messages", model: f.object %>
-      <div><%= f.text_area :comment, class:"comment-form-input", placeholder:"メッセージに対するコメントを記入してください" %></div>
-      <div><%= f.submit "上記の内容でコメントを作成する" ,class:"comment-btn" %></div>
+      <div class="comment-form-comment">
+        <%= f.text_area :comment, class:"comment-form-input", placeholder:"メッセージに対するコメントを記入してください" %>
+      </div>
+      <div>
+        <%= f.submit "上記の内容でコメントを作成する" ,class:"comment-btn" %>
+      </div>
     <% end %>
   </div>
 <% end %>
