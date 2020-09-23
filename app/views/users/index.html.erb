@@ -2,11 +2,12 @@
 
 <div class="header-margin"></div>
 
-<div class="registration-main">
-  <h1>ユーザー一覧</h1>
+<div class="user-title">ユーザー一覧</div>
+
+<div class="user-contents">
   <% @users.each do |user| %>
-    <div class="field">
-      <%= link_to "#{user.nickname}", user_path(user.id) %>
+    <div class="user-box">
+      <%= link_to "#{user.nickname}", user_path(user.id), class: "user-name" %>
     </div>
   <% end %>
 </div>
