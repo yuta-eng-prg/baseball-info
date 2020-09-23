@@ -40,8 +40,10 @@ p {
   text-align: center;
   padding: 10px;
   text-decoration: none;
-  background-color: lightskyblue;
-  color: white;
+  background-color: white;
+  color: gray;
+  font-weight: 900;
+  border: 1px solid gray;
   border-radius:10px 10px 10px 10px;
   box-shadow: 5px 5px 0px 0px white;
 }
