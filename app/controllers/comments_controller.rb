@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
     @message = Message.find(params[:message_id])
     @comment = @message.comments.new(comment_params)
     if @comment.save
+      flash[:notice] = "コメントを作成しました"
       redirect_to message_comments_path(@message.id)
     else
       @comments = @message.comments.includes(:user)
@@ -28,6 +29,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     redirect_to root_path if current_user.id != @comment.user_id
     if @comment.update(comment_params)
+      flash[:notice] = "コメントを更新しました"
       redirect_to message_comments_path(@comment.message_id)
     else
       render :edit
@@ -37,7 +39,10 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     redirect_to root_path if current_user.id != @comment.user_id
-    redirect_to message_comments_path(@comment.message_id) if @comment.destroy
+    if @comment.destroy
+      flash[:notice] = "コメントを削除しました"
+      redirect_to message_comments_path(@comment.message_id) 
+    end
   end
 
   private

@@ -15,31 +15,27 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-  
-  end
-  
-  def update
-    if current_user.update(user_params)
-      redirect_to user_path(current_user.id)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-    redirect_to root_path if current_user.id != @user.id
-    redirect_to root_path if @user.destroy
-  end
-
+  # 編集画面作成に断念のため
   # def edit
   #   redirect_to root_path if current_user.id != @user.id
   # end
   
   # def update
-  #   redirect_to root_path if current_user.id != @user.id
+  #   if current_user.update(user_params)
+  #     redirect_to user_path(current_user.id)
+  #   else
+  #     render :edit
+  #   end
   # end
+
+  def destroy
+    @user = User.find(params[:id])
+    redirect_to root_path if current_user.id != @user.id
+    if @user.destroy
+      flash[:notice] = "退会しました"
+      redirect_to root_path 
+    end
+  end
 
   private
 
