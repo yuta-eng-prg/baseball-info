@@ -1,3 +1,54 @@
 footer {
-  background-color: lightgray;
+  background-color: gray;
+  padding: 40px;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.footer-box1 {
+  display:flex;
+  flex-flow: column;
+  justify-content:space-between;
+}
+
+.footer-logo {
+  font-size: 30px;
+}
+
+.footer-box2 ul li {
+  padding: 5px;
+}
+
+.footer-box3 ul li {
+  padding: 5px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+li {
+  font-size: 15px;
+}
+
+p {
+  font-size: 10px;
+}
+
+.footer-team-btn {
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  background-color: lightskyblue;
+  color: white;
+  border-radius:10px 10px 10px 10px;
+  box-shadow: 5px 5px 0px 0px white;
+}
+
+.footer-team-btn:active {
+  box-shadow: none;
+  position: relative;
+  top: 5px;
+  left: 5px;
 }
