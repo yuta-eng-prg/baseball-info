@@ -11,6 +11,14 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
+    <div class="header-margin"></div>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
