@@ -15,17 +15,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  # 編集画面作成に断念のため
+  # def edit
+  #   redirect_to root_path if current_user.id != @user.id
+  # end
   
-  end
-  
-  def update
-    if current_user.update(user_params)
-      redirect_to user_path(current_user.id)
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   if current_user.update(user_params)
+  #     redirect_to user_path(current_user.id)
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @user = User.find(params[:id])
@@ -35,14 +36,6 @@ class UsersController < ApplicationController
       redirect_to root_path 
     end
   end
-
-  # def edit
-  #   redirect_to root_path if current_user.id != @user.id
-  # end
-  
-  # def update
-  #   redirect_to root_path if current_user.id != @user.id
-  # end
 
   private
 
