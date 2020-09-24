@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+      message:
+        content: メッセージ  
+        generation_id: 世代
+        genre_id: ジャンル
+        body_parts_id: 体の部位
+        category_id: メッセージカテゴリー
+      comment:
+        comment: コメント
+  activehash:
+    models:
+      generation: 世代
+      genre: ジャンル
+      body_parts: 体の部位
+      category: メッセージカテゴリー
