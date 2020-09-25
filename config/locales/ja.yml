@@ -11,9 +11,3 @@ ja:
         category_id: メッセージカテゴリー
       comment:
         comment: コメント
-  activehash:
-    models:
-      generation: 世代
-      genre: ジャンル
-      body_parts: 体の部位
-      category: メッセージカテゴリー
