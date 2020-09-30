@@ -14,7 +14,7 @@
           <%= @message.user.nickname %>
         <% end %>
       </div>
-      <div>日時：<%= @message.created_at %></div>
+      <div>日時：<%= l @message.created_at %></div>
     </div>
     <div class="message-buttom">
       <div>世代：<%= @message.generation.name %></div>        

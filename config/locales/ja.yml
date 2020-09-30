@@ -11,3 +11,8 @@ ja:
         category_id: メッセージカテゴリー
       comment:
         comment: コメント
+
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
