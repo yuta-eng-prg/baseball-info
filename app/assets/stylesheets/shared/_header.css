@@ -37,6 +37,7 @@ header {
   background-color: white;
   padding: 10px;
   margin: 5px 10px;
+  font-size: 11px;
   color: gray;
   border: 1px solid gray;
   font-weight: 900;
@@ -53,9 +54,34 @@ header {
 
  /* タブレット表示時 */
  @media (max-width: 1024px) {
+   header {
+    height: 50px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+   }
 
+   .header-margin {
+    padding-top: 50px;
+  }
+
+  .btn {
+    font-size: 1px;
+    padding: 5px;
+    margin: 3px 3px;
+    transform:scale(0.8);
+  }
+
+  .header-left h1 {
+    display: none;
+  }
  }
 
  @media (max-width: 599px) {
-   
+   header {
+     padding: 1px;
+   }
+  .btn {
+    padding: 1px;
+    margin: 1px;
+  }
  }
